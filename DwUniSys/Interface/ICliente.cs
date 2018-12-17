@@ -38,5 +38,30 @@ namespace Interface
 
         [Required(ErrorMessage = "Campo [UF] obrigatório.")]
         public string I2_UF { get; set; } = "MG";
+
+        public string I2_ENDERECO
+        {
+            get
+            {
+                string Value = string.Empty;
+                if (!string.IsNullOrEmpty(I2_LOGRADOURO))
+                    Value += string.Format("{0}", I2_LOGRADOURO);
+                if (!string.IsNullOrEmpty(I2_LOGRADOURO) && !string.IsNullOrEmpty(I2_NUMERO))
+                    Value += string.Format(" {0}", I2_NUMERO);
+                if (!string.IsNullOrEmpty(Value) && !string.IsNullOrEmpty(I2_BAIRRO))
+                    Value += string.Format(", {0}", I2_BAIRRO);
+                else if (string.IsNullOrEmpty(Value) && !string.IsNullOrEmpty(I2_BAIRRO))
+                    Value += string.Format("{0}", I2_BAIRRO);
+                if (!string.IsNullOrEmpty(Value) && !string.IsNullOrEmpty(I2_MUN))
+                    Value += string.Format(" - {0}", I2_MUN);
+                else if (!string.IsNullOrEmpty(I2_MUN))
+                    Value += string.Format("{0}", I2_MUN);
+                if (!string.IsNullOrEmpty(Value) && !string.IsNullOrEmpty(I2_UF))
+                    Value += string.Format(" / {0}", I2_UF);
+                else if (!string.IsNullOrEmpty(I2_UF))
+                    Value += string.Format("{0}", I2_UF);
+                return Value;
+            }
+        }
     }
 }

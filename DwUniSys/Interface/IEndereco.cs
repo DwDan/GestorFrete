@@ -8,11 +8,10 @@ namespace Interface
 {
     public class IEndereco
     {
-        public string LOGRADOURO { get; set; } = string.Empty;
-        public string NUMERO { get; set; } = string.Empty;
-        public string COMPLEMENTO { get; set; } = string.Empty;
-        public string BAIRRO { get; set; } = string.Empty;
-        public string MUNICIPIO { get; set; } = string.Empty;
-        public string UF { get; set; } = string.Empty;
+        public string LOGRADOURO { get; set; }
+        public string NUMERO { get; set; }
+        public string BAIRRO { get; set; }
+        public string MUNICIPIO { get; set; }
+        public string UF { get; set; }
     }
 }
