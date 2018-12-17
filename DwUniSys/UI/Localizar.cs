@@ -134,5 +134,10 @@ namespace UI
         {
             new OverrideOlv().TimedFilter(olvDados, txtBuscaTexto.Text, 0);
         }
+
+        private void btn_Cancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
