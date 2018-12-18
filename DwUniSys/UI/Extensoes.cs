@@ -112,22 +112,13 @@ namespace UI
 
         public static DateTime GetData(this string Data)
         {
-            return Convert.ToDateTime(Data);
-        }
-    }
-
-    public static class TextMoney
-    {
-        public static void ToMoney(this TextBox text, string format = "C2")
-        {
-            double value;
-            if (double.TryParse(text.Text, out value))
+            try
             {
-                text.Text = value.ToString(format);
+                return Convert.ToDateTime(Data);
             }
-            else
+            catch
             {
-                text.Text = "0,00";
+                return new DateTime();
             }
         }
     }
@@ -140,7 +131,6 @@ namespace UI
         public TextBoxExtension(TextBox TextBox)
         {
             this.TextBox = TextBox;
-            //TextBox.ToMoney();
             TextBox.Leave += new System.EventHandler(this.I5_VALOR_Leave);
             TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.I5_VALOR_KeyPress);
             TextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.I5_VALOR_KeyUp);

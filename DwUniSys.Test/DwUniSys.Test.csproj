@@ -54,6 +54,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="MetodoTest.cs" />
     <Compile Include="IPassageiroTest.cs" />
     <Compile Include="IClienteTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
